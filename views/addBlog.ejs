@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <%- include('./partials/head') %>
+  <title>Add New Blog </title>
+</head>
+<body class="bg-gray-500">
+ <%- include('./partials/nav') %>
+
+<div class="mt-7">
+<form action="/blog" method="post" enctype="multipart/form-data">
+  <div class="p-4 rounded-lg bg-gray-100 dark:bg-gray-800 w-full sm:w-1/2 mx-auto sm:ml-[200px]">
+    
+    <!-- Upload multiple files -->
+    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="multiple_files">Cover Image</label>
+    <input name="coverImg" id="coverImg" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file" required>
+
+    <!-- Title input -->
+    <div class="mb-3">
+      <label for="title" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Title</label>
+      <input type="text" id="title" name="title" required class="block w-full p-2.5 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter blog title...">
+    </div>
+
+    <!-- Comment input -->
+    <div class="mb-3">
+      <textarea name="body" id="body" rows="4" required class="block w-full p-2.5 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your blog comment..."></textarea>
+    </div>
+
+    <!-- Submit button -->
+    <div>
+      <button type="submit" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600">
+        Post Comment
+      </button>
+    </div>
+  </div>
+</form>
+
+
+
+</div>
+ <%- include('./partials/scripts') %>
+</body>
+</html>
