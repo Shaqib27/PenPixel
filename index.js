@@ -6,9 +6,12 @@ const cookieParser = require('cookie-parser');
 const Blog = require("./models/blog");
 
 const app = express();
-const PORT = 8010;
+const PORT = 8000;
+
 const UserRouter = require("./routes/user");
 const BlogRouter = require("./routes/blog");
+
+
 const {checkForAuthenticationCookies} = require("./middlewares/authentication");
 
 app.set("view engine", "ejs"); // or pug, handlebars, etc.
@@ -38,8 +41,6 @@ app.get("/" ,async(req,res )=>{
 
 app.use("/user", UserRouter);
 app.use("/blog", BlogRouter);
-
-
 
 
 app.listen(PORT, () => {console.log(`Server is running on http://localhost:${PORT}`);});
