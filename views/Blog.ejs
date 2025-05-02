@@ -50,7 +50,11 @@
             <%=comment.createdBy.FullName%>
           </div>
         </div>
-        <pre class="ml-4"><%=comment.content %></pre>
+       
+         <!-- <div class="prose lg:prose-xl max-w-none dark:prose-invert"><%=comment.content %></div> -->
+         <!-- <div class="prose lg:prose-xl max-w-none dark:prose-invert"><%- comment.content %></div> -->
+         <pre class="ml-4"><%=comment.content %></pre>
+
       <%}); %>
     </div>
 

@@ -1,7 +1,6 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,7 +18,8 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.14.0",
-    "multer": "^1.4.5-lts.2"
+    "multer": "^1.4.5-lts.2",
+    "node": "^22.15.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
@@ -27,5 +27,6 @@
     "nodemon": "^3.1.10",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.4"
-  }
+  },
+  "description": ""
 }
