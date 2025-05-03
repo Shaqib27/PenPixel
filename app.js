@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const Path = require("path");
 const mongoose = require("mongoose");
@@ -6,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const Blog = require("./models/blog");
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const UserRouter = require("./routes/user");
 const BlogRouter = require("./routes/blog");
@@ -17,7 +18,7 @@ const { checkForAuthenticationCookies } = require("./middlewares/authentication"
 app.set("view engine", "ejs"); // or pug, handlebars, etc.
 app.set("views", Path.resolve("views")); // path to your views folder
 
-mongoose.connect("mongodb://localhost:27017/blogify")
+mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("MongoDB connected"))
     .catch((err) => console.log(err));
 
