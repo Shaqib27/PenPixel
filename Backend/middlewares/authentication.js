@@ -1,24 +1,24 @@
-const {validateToken} = require("../services/authentication");
+const { validateToken } = require("../services/authentication");
 
-function checkForAuthenticationCookies(cookieName){
-    return (req, res , next) => {
+function checkForAuthenticationCookies(cookieName) {
+    return (req, res, next) => {
         const tokenCookieValue = req.cookies[cookieName];
-        if(!tokenCookieValue){
+        if (!tokenCookieValue) {
 
             req.user = null;
-            res.locals.user=null;
+            res.locals.user = null;
 
             return next();
         }
-        try{
+        try {
             const userPayload = validateToken(tokenCookieValue);
             req.user = userPayload;
-             res.locals.user = userPayload; 
+            res.locals.user = userPayload;
         }
-        catch(error){
-            
+        catch (error) {
+
             req.user = null;
-            res.locals.user =null;
+            res.locals.user = null;
         }
         return next();
     };
