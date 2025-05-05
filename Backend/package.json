@@ -5,29 +5,26 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js",
-    "build:css": "tailwindcss -i ./src/input.css -o ./public/css/output.css --minify",
-    "build:css:dev": "tailwindcss -i ./src/input.css -o ./public/css/output.css --watch",
-    "prestart": "npm run build:css"
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.14.0",
-    "multer": "^1.4.5-lts.2"
+    "multer": "^1.4.5-lts.2",
+    "node": "^22.15.0"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.4",
     "autoprefixer": "^10.4.21",
     "cross-env": "^7.0.3",
-    "flowbite": "^3.1.2",
-    "flowbite-plugin": "^1.7.0",
     "nodemon": "^3.1.10",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.4"
